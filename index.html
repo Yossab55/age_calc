@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="fonts/stylesheet.css" />
+    <link rel="stylesheet" href="css/rester.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Frontend Mentor | Age calculator app</title>
+  </head>
+  <body>
+    <div class="main-body">
+      <div class="inputs">
+        <div class="box">
+          <label for="day">day</label>
+          <input type="text" name="day" placeholder="DD" id="day"/>
+        </div>
+        <div class="box">
+          <label for="month">month</label>
+          <input type="text" name="month" placeholder="MM" id="month"/>
+        </div>
+        <div class="box">
+          <label for="year">year</label>
+          <input type="text" name="year" placeholder="YYYY" id="year"/>
+        </div>
+        
+      </div>
+      <div class="show-age">
+        <div class="line"></div>
+        <button id="but"><img src="images/icon-arrow.svg" alt="arrow" /></button>
+        <div class="age">
+          <div class="row">
+            <span class="number" id="num-year">- -</span> <span class="adj">years</span>
+          </div>
+          <div class="row">
+            <span class="number" id="num-month">- -</span> <span class="adj">months</span>
+          </div>
+          <div class="row">
+            <span class="number" id="num-day">- -</span> <span class="adj">days</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="attribution">
+      <p>
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a>.
+      </p>
+      <p>
+        Coded by <a href="https://github.com/Yossab55" target="_blank" class="name">Yossab Samouel</a>
+      </p>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
