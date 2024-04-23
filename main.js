@@ -35,34 +35,34 @@ function errorEmpty() {
   }
 }
 function errorInvalid() {
-  let dayRex = /[1-31]/g;
   let yearTest = yearNow < yearInput.value ? false : true;
-  if (!dayRex.test(dayInput.value)) {
+  if (dayInput.value<1 || dayInput.value > 31) {
     text = "Must be a valid day";
-    colorRed(dayInput);
     errorInvalidHappened = true;
+    colorRed(dayInput);
   }
   
   if (monthInput.value < 1 || monthInput.value> 12) {
     text = "Must be a valid month";
-    colorRed(monthInput);
     errorInvalidHappened = true;
+    colorRed(monthInput);
   }
   if (!yearTest) {
     text = "Must be in the past";
-    colorRed(yearInput);
     errorInvalidHappened = true;
+    colorRed(yearInput);
   }
   if (yearNow == yearInput.value) {
-    if (monthNow < monthInput.value) {
+    if (monthNow < monthInput.value && dayNow >= dayInput.value) {
       text = "Must be in the past";
+      errorInvalidHappened = true;
       colorRed(monthInput);
-      errorInvalidHappened = true;
     }
-    if (dayNow < dayInput.value) {
+    if(dayNow < dayInput.value && monthNow < monthInput.value) {
       text = "Must be in the past";
-      colorRed(dayInput);
       errorInvalidHappened = true;
+      colorRed(dayInput);
+      colorRed(monthInput);
     }
   }
 
@@ -89,7 +89,7 @@ function errorInvalid() {
   }
 }
 function colorRed(e) {
-  if(e.value != "") return ;
+  if (e.value != "" && !errorInvalidHappened) return;
   e.parentElement.childNodes[1].style.color = "#ff000096";
   e.parentElement.childNodes[3].style.border = "1px solid #ff000096";
   let spanText = document.createElement("span");
